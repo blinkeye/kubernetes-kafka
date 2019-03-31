@@ -17,10 +17,10 @@ spec:
       - name: kafka-manager
         image: solsson/kafka-manager@sha256:9cddcf8f8df2df77d738e5dbe48676e4ce298caf4cc0465a5da51475b0fe74ad
         ports:
-        - containerPort: 80
+        -  containerPort: 80
         env:
         - name: ZK_HOSTS
-          value: zookeeper.kafka:2181
+          value: my-confluent-cp-zookeeper.default.svc.cluster.local:2181
         command:
         - ./bin/kafka-manager
         - -Dhttp.port=80
